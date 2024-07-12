@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/widgets/switch_dark_theme.dart';
+import 'widgets/buttons/floating_buttons_widget.dart';
 
 class _HomePageState extends State<HomePage> {
   int counter = 0;
@@ -7,14 +9,20 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: const Center(
-          child: Text(
-            'Home Page',
-            style: TextStyle(
-              color: Colors.white,
+        title: const Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              'Home Page',
+              style: TextStyle(
+                color: Colors.white,
+              ),
             ),
-          ),
+            SizedBox(
+              width: 10,
+            ),
+            SwitchDarkTheme()
+          ],
         ),
       ),
       body: Center(
@@ -32,16 +40,12 @@ class _HomePageState extends State<HomePage> {
           },
         ),
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: IncrementButton(
         onPressed: () {
           setState(() {
             counter++;
           });
         },
-        tooltip: 'Increment',
-        backgroundColor: Colors.blue,
-        foregroundColor: Colors.white,
-        child: const Icon(Icons.add),
       ),
       floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
     );
