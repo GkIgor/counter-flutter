@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/home_page.dart';
+import 'package:myapp/pages/login_page.dart';
 import 'package:myapp/widgets/states/theme_state.dart';
 
 class AppWidget extends StatelessWidget {
@@ -20,7 +21,7 @@ class AppWidget extends StatelessWidget {
               visualDensity: VisualDensity.adaptivePlatformDensity,
             ),
             debugShowCheckedModeBanner: false,
-            home: const HomePage(),
+            home: const LoginPage(),
           );
         });
   }
