@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/widgets/states/theme_state.dart';
+import 'package:myapp/states/theme_state.dart';
 
 class IncrementButton extends StatelessWidget {
   final VoidCallback onPressed;

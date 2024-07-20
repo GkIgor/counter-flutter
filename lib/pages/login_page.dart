@@ -1,7 +1,7 @@
 import 'dart:developer';
-
+import '../states/auth_state.dart';
+import './home_page.dart';
 import 'package:flutter/material.dart';
-import 'package:myapp/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -72,9 +72,14 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(height: 15),
                 ElevatedButton(
                   onPressed: () {
-                    print("Usuario: $email - Senha: $password");
-
                     if (email == "Admin" && password == "Admin") {
+                      AuthState.instance.login();
+
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('Login realizado com sucesso'),
+                        ),
+                      );
                       Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
                           builder: (context) => const HomePage(),
